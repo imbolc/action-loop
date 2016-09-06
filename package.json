@@ -1,0 +1,28 @@
+{
+  "name": "action-loop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "hoodie --port 8000 --in-memory",
+    "builddev": "webpack -d --progress --colors --watch",
+    "start": "parallelshell 'npm run server' 'npm run builddev'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "hoodie": "^23.3.3",
+    "material-ui": "^0.15.2",
+    "parallelshell": "^2.0.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "webpack": "^1.13.1"
+  }
+}
