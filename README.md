@@ -29,3 +29,9 @@ Workflow:
 
 - Switch the repo to this part: `git checkout part0`
 - Run dev server: `npm start`
+
+Part 1: client-side database
+----------------------------
+In this part we learn how to add document to db and subscribe on db changes.
+Russian article is avaliable at <https://habrahabr.ru/topic/edit/309166/>.
+Do not forget to switch the repo: `git checkout part1`
