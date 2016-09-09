@@ -1,10 +1,10 @@
 import React from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import AppBar from 'material-ui/AppBar'
 import Paper from 'material-ui/Paper'
 import Hoodie from '@hoodie/client'
 
 import AddLoop from './AddLoop'
+import NavBar from './NavBar'
 
 
 const hoodie = new Hoodie()
@@ -20,6 +20,8 @@ export default class App extends React.Component {
 
   componentDidMount() {
     hoodie.store.on('change', this.loadLoops);
+    hoodie.account.on('signin', this.loadLoops)
+    hoodie.account.on('signout', this.loadLoops)
   }
 
   loadLoops = () => {
@@ -31,7 +33,7 @@ export default class App extends React.Component {
     return (
       <MuiThemeProvider>
         <div>
-          <AppBar title="Action Loop" />
+          <NavBar account={hoodie.account} />
 
           {this.state.loops.map(loop => (
             <Paper key={loop.id} zDepth={2} style={{maxWidth: 400, margin: '20px auto'}}>

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "hoodie --port 8000 --in-memory",
+    "server": "hoodie --port 8000 --dbUrl 'http://username:password@127.0.0.1:5984'",
     "builddev": "webpack -d --progress --colors --watch",
     "start": "parallelshell 'npm run server' 'npm run builddev'"
   },
