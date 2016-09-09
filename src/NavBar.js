@@ -19,9 +19,17 @@ export default class NavBar extends React.Component {
     }
   }
 
+  signOutCallback = () => this.setState({isSignedIn: false})
+  signInCallback = () => this.setState({isSignedIn: true})
+
   componentDidMount() {
-    this.props.account.on('signout', () => this.setState({isSignedIn: false}))
-    this.props.account.on('signin', () => this.setState({isSignedIn: true}))
+    this.props.account.on('signout', this.signOutCallback)
+    this.props.account.on('signin', this.signInCallback)
+  }
+
+  componentWillUnmount() {
+    this.props.account.on('signout', this.signOutCallback)
+    this.props.account.on('signin', this.signInCallback)
   }
 
   render () {

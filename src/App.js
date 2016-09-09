@@ -24,6 +24,12 @@ export default class App extends React.Component {
     hoodie.account.on('signout', this.loadLoops)
   }
 
+  componentWillUnmount() {
+    hoodie.store.off('change', this.loadLoops);
+    hoodie.account.off('signin', this.loadLoops)
+    hoodie.account.off('signout', this.loadLoops)
+  }
+
   loadLoops = () => {
     hoodie.store.findAll(doc => doc.type == 'loop')
       .then(loops => this.setState({loops}))
