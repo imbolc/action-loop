@@ -33,7 +33,7 @@ Workflow:
 Part 1: client-side database
 ----------------------------
 In this part we learn how to add document to db and subscribe on db changes.
-Russian article is avaliable at <https://habrahabr.ru/topic/edit/309166/>.
+Russian article is avaliable at <https://habrahabr.ru/post/309166/>.
 Do not forget to switch the repo: `git checkout part1`
 
 Part 2: authorization
