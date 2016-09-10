@@ -28,8 +28,8 @@ export default class NavBar extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.account.on('signout', this.signOutCallback)
-    this.props.account.on('signin', this.signInCallback)
+    this.props.account.off('signout', this.signOutCallback)
+    this.props.account.off('signin', this.signInCallback)
   }
 
   render () {
